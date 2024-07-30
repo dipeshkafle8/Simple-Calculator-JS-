@@ -1,19 +1,44 @@
+html,body{
+    background-color:rgba(128, 54, 197,0.6);
+    height:100%;
+    margin:0;
+    padding:0;
+}
 #display{
-    font-size:4em;
+    font-size:4em;   
 }
 .container{
-    height:60vh;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;        
+}
+.content{
+    width:38%;
+    height:70%;
+    background-color:rgba(124, 237, 235, 0.597);
     display:flex;    
     flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    border:2px solid blue;
-    flex-wrap:wrap;
+    align-items:center;   
+}
+.buttons{    
+   margin-top:1.2em;
+    display:grid;
+    grid-template-columns:repeat(4,auto);
+    row-gap:0.1em;
+    
+    
 }
 button{
+    width:20%;
     padding:2em 4em;
+    border-radius:10%;
 }
-.operator.equal{
-    
-    padding:2em 8.2em;
+button:hover{
+    background-color:black;
+    color:white;
+}
+.zero{    
+    width:90%;
+    grid-column:span 2;
 }

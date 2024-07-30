@@ -38,33 +38,55 @@ operators.forEach((operatorValue)=>{
 }
 
 
+//to handle equalto(=) operator
+ function handleEqualOperator(){
+    let operand2=parseInt(displaydiv.innerHTML);
+    switch(operator){
+        case '+':
+            displaydiv.innerText=operand1+operand2;
+            break;
+            case '-':
+                displaydiv.innerText=operand1-operand2;
+                break;
+                case '*':
+                    displaydiv.innerText=operand1*operand2;
+                    break;
+                    case '%':
+                        displaydiv.innerText=operand1/operand2;
+                        break;
+            
+    }
+    operand1=0;
+    isNew=true;
+}
+
+//to handle DEl operator
+function handleDelOperator(){
+let text=displaydiv.innerText;
+let len=text.length;
+if(len=='1' && text!='0'){
+    displaydiv.innerText=0;
+}
+else if(len!='1'){        
+    text=text.slice(0,len-1); 
+    displaydiv.innerText=text;   
+} 
+}
+
+
 //function for handling operations
 function handleOperations(event){    
         //isNew=false;       
         let tempOperator=event.target.innerText;
-        if(tempOperator!='='){
+        if(tempOperator=="DEL"){
+         handleDelOperator();
+        }
+        else if(tempOperator!='='){
             operand1=parseInt(displaydiv.innerText);
             operator=event.target.innerText;
             isNew=true;
         }else{
-            let operand2=parseInt(displaydiv.innerHTML);
-            switch(operator){
-                case '+':
-                    displaydiv.innerText=operand1+operand2;
-                    break;
-                    case '-':
-                        displaydiv.innerText=operand1-operand2;
-                        break;
-                        case '*':
-                            displaydiv.innerText=operand1*operand2;
-                            break;
-                            case '%':
-                                displaydiv.innerText=operand1/operand2;
-                                break;
-                    
-            }
-            operand1=0;
-            isNew=true;
+            handleEqualOperator();
         }       
         
         
