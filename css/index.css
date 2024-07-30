@@ -1,0 +1,19 @@
+#display{
+    font-size:4em;
+}
+.container{
+    height:60vh;
+    display:flex;    
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border:2px solid blue;
+    flex-wrap:wrap;
+}
+button{
+    padding:2em 4em;
+}
+.operator.equal{
+    
+    padding:2em 8.2em;
+}
